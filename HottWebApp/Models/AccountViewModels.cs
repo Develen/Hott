@@ -80,6 +80,21 @@ namespace HottWebApp.Models
         [Display(Name = "Подтверждение пароля")]
         [Compare("Password", ErrorMessage = "Пароль и его подтверждение не совпадают.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "Значение {0} должно содержать не менее {2} символов.", MinimumLength = 2)]
+        [Display(Name = "Имя")]
+        public string Name { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "Значение {0} должно содержать не менее {2} символов.", MinimumLength = 2)]
+        [Display(Name = "Фамилия")]
+        public string Sername { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "Значение {0} должно содержать не менее {2} символов.", MinimumLength = 2)]
+        [Display(Name = "Отчество")]
+        public string Patronymic { get; set; }
     }
 
     public class ResetPasswordViewModel

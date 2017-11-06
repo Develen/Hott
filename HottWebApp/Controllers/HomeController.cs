@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace HottWebApp.Controllers
 {
@@ -11,6 +9,8 @@ namespace HottWebApp.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.UserName = GetUserName();
+
             return View();
         }
 
@@ -26,6 +26,20 @@ namespace HottWebApp.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        private string GetUserName()
+        {
+            var identityUserName = User.Identity.GetUserName();
+            using (var context = new HottEntities())
+            {
+                var user = context.Users.FirstOrDefault(u => u.Login == identityUserName);
+                if (user != null)
+                {
+                    return $"{user.Name} {user.Sername}";
+                }
+            }
+            return identityUserName;
         }
     }
 }

@@ -155,6 +155,7 @@ namespace HottWebApp.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    CreateHottUser(model);
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
@@ -170,6 +171,25 @@ namespace HottWebApp.Controllers
 
             // Появление этого сообщения означает наличие ошибки; повторное отображение формы
             return View(model);
+        }
+
+        private void CreateHottUser(RegisterViewModel model)
+        {
+            using (var context = new HottEntities())
+            {
+                var userExists = context.Users.Any(u => u.Login == model.Email);
+                if (!userExists)
+                {
+                    context.Users.Add(new User()
+                    {
+                        Login = model.Email,
+                        Name = model.Name,
+                        Otchestvo = model.Patronymic,
+                        Sername = model.Sername
+                    });
+                }
+                context.SaveChanges();
+            }
         }
 
         //

@@ -34,7 +34,7 @@
                     <ul class="dropdown-menu">
                         @for (var row = _event.Hall.RowFrom; row <= _event.Hall.RowTo; row++)
                         {
-                            <li><a value="@row">@row</a></li>
+                            <li class="@(_event.Id==18 && (row % 3 == 0 || row % 7 == 0 ) ? "disabled" : "")"><a value="@row">@row</a></li>
                         }
                     </ul>
                 </div>
@@ -46,7 +46,7 @@
                     <ul class="dropdown-menu">
                         @for (var seat = _event.Hall.SeatFrom; seat <= _event.Hall.SeatTo; seat++)
                         {
-                            <li><a value="@seat">@seat</a></li>
+                            <li class="@(_event.Id==18 && (seat % 5 == 0 || seat % 9 == 0 ) ? "disabled" : "")"><a value="@seat">@seat</a></li>
                         }
                     </ul>
                 </div>

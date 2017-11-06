@@ -4,17 +4,17 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2d6bb0521f9d46a99a4c098bcababd05" Name="Diagram1">
-        <EntityTypeShape EntityType="HottModel.Building" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="HottModel.Event" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="HottModel.EventType" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="HottModel.Hall" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="HottModel.Order" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="HottModel.Status" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="HottModel.sysdiagram" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="HottModel.User" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+      <Diagram DiagramId="2d6bb0521f9d46a99a4c098bcababd05" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="HottModel.Building" Width="1.5" PointX="2.875" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HottModel.Event" Width="1.5" PointX="5.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HottModel.EventType" Width="1.5" PointX="5.125" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="HottModel.Hall" Width="1.5" PointX="2.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HottModel.Order" Width="1.5" PointX="7.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HottModel.Status" Width="1.5" PointX="9.5" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HottModel.sysdiagram" Width="1.5" PointX="9" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="HottModel.User" Width="1.5" PointX="9.375" PointY="2.75" IsExpanded="true" />
         <AssociationConnector Association="HottModel.FK_Halls_Buildings" ManuallyRouted="false" />
-        <AssociationConnector Association="HottModel.FK_Events_EventType" ManuallyRouted="false" />
+        <AssociationConnector Association="HottModel.FK_Events_EventType" ManuallyRouted="false" ></AssociationConnector>
         <AssociationConnector Association="HottModel.FK_Events_Halls" ManuallyRouted="false" />
         <AssociationConnector Association="HottModel.FK_Orders_Events" ManuallyRouted="false" />
         <AssociationConnector Association="HottModel.FK_Orders_Statuses" ManuallyRouted="false" />

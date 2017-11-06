@@ -6,7 +6,7 @@ using System.Data.Entity;
 
 namespace HottWebApp.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -26,7 +26,7 @@ namespace HottWebApp.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Вы можете связаться с нами любым удобным для Вас способом.";
             ViewBag.UserName = GetUserName();
 
             return View();

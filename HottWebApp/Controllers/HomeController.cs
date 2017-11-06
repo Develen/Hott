@@ -23,7 +23,7 @@ namespace HottWebApp.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Вы можете связаться с нами любым удобным для Вас способом.";
 
             return View();
         }

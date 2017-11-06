@@ -252,7 +252,10 @@
     <Content Include="Image\m66Ynz4WxuIs_idCqKWtMrzjq6ETNp72.jpg" />
     <Content Include="Image\marsh.jpg" />
     <Content Include="Image\smile.jpg" />
+    <Content Include="Image\smile1.jpg" />
+    <Content Include="Image\smile2.jpg" />
     <Content Include="Image\TaMWTio23iYoR67LVkpTy9sZTqlBLNmw.jpg" />
+    <Content Include="Image\Карта.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">

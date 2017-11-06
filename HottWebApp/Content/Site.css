@@ -34,3 +34,6 @@ textarea {
     .navbar-inverse .navbar-brand {
         color: darkblue;
     }
+.navigationRegister a {
+    color: darkblue;
+}

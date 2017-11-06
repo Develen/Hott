@@ -91,7 +91,7 @@ namespace HottWebApp.Models
         [Display(Name = "Фамилия")]
         public string Sername { get; set; }
 
-        [Required]
+      
         [StringLength(100, ErrorMessage = "Значение {0} должно содержать не менее {2} символов.", MinimumLength = 2)]
         [Display(Name = "Отчество")]
         public string Patronymic { get; set; }

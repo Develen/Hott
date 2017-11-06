@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity;
 
 namespace HottWebApp.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()

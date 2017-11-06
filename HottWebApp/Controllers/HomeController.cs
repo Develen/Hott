@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
+using HottWebApp.Models;
 using Microsoft.AspNet.Identity;
+using System.Data.Entity;
 
 namespace HottWebApp.Controllers
 {
@@ -14,16 +16,18 @@ namespace HottWebApp.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult PlayBill()
         {
             ViewBag.Message = "Успей выбрать билет по выгодной цене!";
+            ViewBag.UserName = GetUserName();
 
-            return View();
+            return View(new PlayBillModel(GetEvents()));
         }
 
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
+            ViewBag.UserName = GetUserName();
 
             return View();
         }
@@ -40,6 +44,14 @@ namespace HottWebApp.Controllers
                 }
             }
             return identityUserName;
+        }
+
+        private Event[] GetEvents()
+        {
+            using (var context = new HottEntities())
+            {
+                return context.Events.Include(e => e.EventType).Include(e => e.Hall).Include(e=>e.Hall.Building).ToArray();
+            }
         }
     }
 }

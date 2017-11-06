@@ -34,3 +34,11 @@ textarea {
     .navbar-inverse .navbar-brand {
         color: darkblue;
     }
+
+.event-details .rows-dropdown, .event-details .seats-dropdown {
+    display:inline
+}
+
+.order-container {
+    margin-top: 10px;
+}

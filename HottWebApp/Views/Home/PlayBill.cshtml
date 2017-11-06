@@ -1,0 +1,60 @@
+﻿@model HottWebApp.Models.PlayBillModel
+@{
+    ViewBag.Title = "Купить билет";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<div class="dropdown events-dropdown">
+    <button class="btn btn-primary dropdown-toggle events-dropdown-button" type="button" data-toggle="dropdown">
+        Выберите мероприятие
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        @foreach (var _event in Model.Events)
+        {
+            <li><a data-event-id="@_event.Id">@_event.Title</a></li>
+        }
+    </ul>
+</div>
+<div class="event-details">
+    @foreach (var _event in Model.Events)
+    {
+        <div class="collapse" data-event-id="@_event.Id">
+            <div>@_event.Title</div>
+            <div>Зал: @_event.Hall.Name</div>
+            <div>Адрес: @_event.Hall.Building.Address</div>
+            <div>Цена: @_event.EventType.Price рублей</div>
+            <div>
+                <div class="dropdown rows-dropdown">
+                    <button class="btn btn-primary dropdown-toggle row-dropdown-button" type="button" data-toggle="dropdown">
+                        Ряд
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        @for (var row = _event.Hall.RowFrom; row <= _event.Hall.RowTo; row++)
+                        {
+                            <li><a value="@row">@row</a></li>
+                        }
+                    </ul>
+                </div>
+                <div class="dropdown seats-dropdown">
+                    <button class="btn btn-primary dropdown-toggle seat-dropdown-button" type="button" data-toggle="dropdown">
+                        Место
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        @for (var seat = _event.Hall.SeatFrom; seat <= _event.Hall.SeatTo; seat++)
+                        {
+                            <li><a value="@seat">@seat</a></li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<div class="order-container">
+    <button type="button" class="btn btn-primary disabled" id="btn-order">Купить</button>
+</div>
+

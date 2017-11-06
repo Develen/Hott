@@ -275,6 +275,7 @@
       <DependentUpon>HottModel.edmx</DependentUpon>
       <LastGenOutput>HottModel.cs</LastGenOutput>
     </Content>
+    <Compile Include="Models\PlayBillModel.cs" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -286,6 +287,7 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\hott.js" />
     <Content Include="Views\Images\marsh.jpg" />
     <Content Include="Views\Images\smile.jpg" />
     <Content Include="Web.config" />
@@ -299,7 +301,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\PlayBill.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
